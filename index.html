@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AfghanCrypto</title>
+  <meta charset="UTF-8">
+  <script src="https://sdk.adsgram.ai/sdk.js"></script>
+</head>
+<body style="text-align:center; font-family:sans-serif;">
+  <h2>🎉 خوش آمدید به AfghanCrypto</h2>
+  <p>برای دریافت پاداش، روی دکمه زیر کلیک کنید:</p>
+  <button onclick="showAd()" style="padding:10px 20px; font-size:16px;">دیدن تبلیغ</button>
+
+  <script>
+    function showAd() {
+      window.adsgram.showAd({
+        blockId: '16615', // اینو با Block ID واقعی خودت جایگزین کن
+        onReward: function() {
+          alert("✅ پاداش شما ثبت شد!");
+        }
+      });
+    }
+  </script>
+</body>
+</html>
