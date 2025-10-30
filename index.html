@@ -1,24 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="fa">
 <head>
-  <title>AfghanCrypto</title>
   <meta charset="UTF-8">
+  <title>AfghanCrypto</title>
+
+  <!-- بارگذاری SDK تبلیغات AdsGram -->
   <script src="https://sdk.adsgram.ai/sdk.js"></script>
+
+  <!-- استایل ساده برای زیبایی صفحه -->
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f9f9f9;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #0088cc;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #006699;
+    }
+  </style>
 </head>
-<body style="text-align:center; font-family:sans-serif;">
+<body>
+
   <h2>🎉 خوش آمدید به AfghanCrypto</h2>
   <p>برای دریافت پاداش، روی دکمه زیر کلیک کنید:</p>
-  <button onclick="showAd()" style="padding:10px 20px; font-size:16px;">دیدن تبلیغ</button>
 
+  <!-- دکمه نمایش تبلیغ -->
+  <button onclick="showAd()">دیدن تبلیغ و دریافت پاداش</button>
+
+  <!-- کد جاوااسکریپت برای نمایش تبلیغ -->
   <script>
     function showAd() {
       window.adsgram.showAd({
-        blockId: '16615', // اینو با Block ID واقعی خودت جایگزین کن
+        blockId: '16615', // 🔁 این عدد را با Block ID واقعی خودت جایگزین کن
         onReward: function() {
           alert("✅ پاداش شما ثبت شد!");
         }
       });
     }
   </script>
+
 </body>
 </html>
