@@ -3,11 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>AfghanCrypto</title>
-
-  <!-- بارگذاری SDK AdsGram -->
   <script src="https://sdk.adsgram.ai/sdk.js"></script>
-
-  <!-- استایل ساده -->
   <style>
     body {
       font-family: sans-serif;
@@ -33,16 +29,13 @@
 
   <h2>🎉 خوش آمدید به AfghanCrypto</h2>
   <p>برای دریافت پاداش، روی دکمه زیر کلیک کنید:</p>
-
-  <!-- دکمه نمایش تبلیغ -->
   <button id="rewardBtn">دیدن تبلیغ و دریافت پاداش</button>
 
-  <!-- کد جاوااسکریپت -->
   <script>
     document.getElementById("rewardBtn").addEventListener("click", function () {
       if (window.adsgram && typeof window.adsgram.showAd === "function") {
         window.adsgram.showAd({
-          blockId: '16615', // 🔁 جایگزین با Block ID واقعی
+          blockId: '16615',
           onReward: function () {
             alert("✅ پاداش شما ثبت شد!");
           },
