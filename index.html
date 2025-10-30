@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <title>AfghanCrypto</title>
 
-  <!-- بارگذاری SDK تبلیغات AdsGram -->
+  <!-- بارگذاری SDK AdsGram -->
   <script src="https://sdk.adsgram.ai/sdk.js"></script>
 
-  <!-- استایل ساده برای زیبایی صفحه -->
+  <!-- استایل ساده -->
   <style>
     body {
       font-family: sans-serif;
       text-align: center;
-      padding: 50px;
-      background-color: #f9f9f9;
+      padding: 40px;
+      background-color: #f0f0f0;
     }
     button {
       padding: 12px 24px;
@@ -32,21 +32,28 @@
 <body>
 
   <h2>🎉 خوش آمدید به AfghanCrypto</h2>
-  <p>برای دریافت پاداشها، روی دکمه زیر کلیک کنید:</p>
+  <p>برای دریافت پاداش، روی دکمه زیر کلیک کنید:</p>
 
   <!-- دکمه نمایش تبلیغ -->
-  <button onclick="showAd()">دیدن تبلیغ و دریافت پاداش</button>
+  <button id="rewardBtn">دیدن تبلیغ و دریافت پاداش</button>
 
-  <!-- کد جاوااسکریپت برای نمایش تبلیغ -->
+  <!-- کد جاوااسکریپت -->
   <script>
-    function showAd() {
-      window.adsgram.showAd({
-        blockId: '16615', // 🔁 این عدد را با Block ID واقعی خودت جایگزین کن
-        onReward: function() {
-          alert("✅ پاداش شما ثبت شد!");
-        }
-      });
-    }
+    document.getElementById("rewardBtn").addEventListener("click", function () {
+      if (window.adsgram && typeof window.adsgram.showAd === "function") {
+        window.adsgram.showAd({
+          blockId: '16615', // 🔁 جایگزین با Block ID واقعی
+          onReward: function () {
+            alert("✅ پاداش شما ثبت شد!");
+          },
+          onError: function (err) {
+            alert("❌ خطا در نمایش تبلیغ: " + err.message);
+          }
+        });
+      } else {
+        alert("❌ SDK AdsGram بارگذاری نشده یا در محیط تلگرام نیستید.");
+      }
+    });
   </script>
 
 </body>
